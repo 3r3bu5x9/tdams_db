@@ -15,7 +15,8 @@ html, body {
     border: yellow solid thin;
     margin-left: 100px;
 }
-.content h2{
+
+.content h2 {
     padding-left: 20px;
 }
 
@@ -35,6 +36,7 @@ html, body {
     align-items: center;
     border: #919288 solid 1px;
 }
+
 .Nav a {
     text-decoration: none;
     color: chartreuse;
@@ -45,20 +47,25 @@ html, body {
     flex-direction: column;
     margin: 50px;
 }
-.navLinkCnt{
+
+.navLinkCnt {
     padding: 10px;
 }
+
 .navLinkCnt a {
     text-decoration: none;
     color: cyan;
 }
+
 .navLinkCnt a:hover {
     color: hotpink;
 }
-.MyTable{
+
+.MyTable {
     display: block;
 }
-.MyRow{
+
+.MyRow {
     display: flex;
     background-color: #040404;
     border: #222222 solid 2px;
@@ -67,15 +74,18 @@ html, body {
     width: fit-content;
     padding: 5px;
 }
-.MyTable div:hover{
+
+.MyTable :hover {
     border: rebeccapurple solid 2px;
 }
-.MyRow button{
+
+.MyRow button {
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 9px;
 }
-.MyRowElement{
+
+.MyRowElement {
     padding: 12px;
     border-radius: 20px;
     border: #919288 solid 2px;
@@ -83,7 +93,8 @@ html, body {
     width: fit-content;
     height: fit-content;
 }
-.MyRowElementBtn{
+
+.MyRowElementBtn {
     padding: 8px;
 }
 
@@ -110,7 +121,8 @@ input {
     padding: 10px;
     border-radius: 20px;
 }
-.ItemQty{
+
+.ItemQty {
     padding: 8px;
     border-radius: 20px;
     width: fit-content;
@@ -119,7 +131,8 @@ input {
     background-color: crimson;
     color: white;
 }
-.MyRow button:hover{
+
+.MyRow button:hover {
     background-color: inherit;
     color: white;
     border: white solid 2px;
@@ -164,4 +177,40 @@ input {
     background: #0b0e12;
     margin: 2px;
     color: #919288;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: inherit;
+    padding: 50px;
+    z-index: 1000;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, .25);
+}
+
+.ModalElementValAddress {
+    padding: 12px;
+    border-radius: 20px;
+    color: aqua;
+    border: aqua solid 2px;
+    margin: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+.ModalContainer{
+    background-color: #222222;
+    border-radius: 20px;
+    border: whitesmoke solid 2px;
+    width: 10%;
+    height: 30%;
 }
