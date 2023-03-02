@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: "JetBrains Mono", monospace;
+    color: #ccc;
+    background-color: #222;
+}
+
+.content {
+    background-color: #0B0E12;
+    border: yellow solid thin;
+    margin-left: 100px;
+}
+.content h2{
+    padding-left: 20px;
+}
+
+.Nav {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #040404;
+    transition: .5s ease;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #919288 solid 1px;
+}
+.Nav a {
+    text-decoration: none;
+    color: chartreuse;
+}
+
+.navLinksCnt {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.navLinkCnt{
+    padding: 10px;
+}
+.navLinkCnt a {
+    text-decoration: none;
+    color: cyan;
+}
+.navLinkCnt a:hover {
+    color: hotpink;
+}
+.MyTable{
+    display: block;
+}
+.MyRow{
+    display: flex;
+    background-color: #040404;
+    border: #222222 solid 2px;
+    border-radius: 20px;
+    margin: 5px;
+    width: fit-content;
+    padding: 5px;
+}
+.MyTable div:hover{
+    border: rebeccapurple solid 2px;
+}
+.MyRow button{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 9px;
+}
+.MyRowElement{
+    padding: 12px;
+    border-radius: 20px;
+    border: #919288 solid 2px;
+    margin: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+.MyRowElementBtn{
+    padding: 8px;
+}
+
+
+/*Button*/
+.ButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+input {
+    width: 100%;
+    height: 2em;
+}
+
+.BtnItem {
+    background-color: inherit;
+    color: yellow;
+    border: yellow solid 2px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+}
+.ItemQty{
+    padding: 8px;
+    border-radius: 20px;
+    width: fit-content;
+    height: fit-content;
+    border: whitesmoke solid 2px;
+    background-color: crimson;
+    color: white;
+}
+.MyRow button:hover{
+    background-color: inherit;
+    color: white;
+    border: white solid 2px;
+}
+
+.BtnBlue {
+    background-color: inherit;
+    color: aqua;
+    border: aqua solid 2px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.BtnRed {
+    background: red;
+    color: #0B0E12;
+    width: 5em;
+    height: 3em;
+}
+
+.BtnCheckout {
+    width: 12em;
+    height: 3em;
+    background: gold;
+    color: #0B0E12;
+}
+
+.BtnPay {
+    width: 6em;
+    height: 3em;
+    background-color: inherit;
+    color: chartreuse;
+    border: chartreuse solid 2px;
+    border-radius: 20px;
+}
+
+.btnSmall {
+    width: 50px;
+    height: 50px;
+    background: #0b0e12;
+    margin: 2px;
+    color: #919288;
+}
