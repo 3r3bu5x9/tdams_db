@@ -1,34 +1,29 @@
 import {useContext, useEffect, useState} from "react";
 import axios from 'axios'
-import {URL_all_orders, URL_Delp_accept_order, URL_get_Item_Vendor} from "../apis/apis";
-import {useDispatch, useSelector} from 'react-redux'
+import {URL_all_orders, URL_Delp_accept_order, URL_Delp_by_id, URL_get_Item_Vendor} from "../apis/apis";
+import {useDispatch} from 'react-redux'
 import Modal from 'react-modal'
 import AddressInfo from "./AddressInfo";
 import UserContext from "../contexts/UserContext";
-import {useNavigate} from "react-router-dom";
 
 Modal.setAppElement('#root')
 
-export default function AllOrders() {
+export default function MyOrders() {
     useEffect(() => {
-        axios.get(URL_all_orders)
-            .then((res) => dispatch({type: 'order/findAll', payload: res.data}))
+        axios.get(URL_Delp_by_id(loggedInUser.dpid))
+            .then((res) => setOrdersResp(()=>res.data.orders))
     }, [])
-    const filterByAvailable = (order)=>{
-        return !order.isAccepted;
-    }
     const dispatch = useDispatch()
-    const ordersResp = useSelector(state => state.DelpReducer)
+    const [ordersResp, setOrdersResp] = useState([])
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [content, setContent] = useState({})
     const {loggedInUser} = useContext(UserContext)
-    const navigate = useNavigate()
 
     return (
         <>
             <center>
                 <h2>
-                    All Orders
+                    My Orders
                 </h2>
 
                 <>
@@ -67,7 +62,7 @@ export default function AllOrders() {
                 </>
 
                 <div className={'MyTable'}>
-                    {ordersResp.filter(filterByAvailable).map((order) => (
+                    {ordersResp.map((order) => (
                         <div key={order.oid} className={'MyRow'}>
                             <div className={'MyRowElement'}>{order.oid}</div>
                             <div className={'MyRowElement'}>{order.customer.userCc.uname}</div>
@@ -75,12 +70,12 @@ export default function AllOrders() {
                                 order.customer.tiffin.tiffinDetails.map((td) =>
                                     <>
                                         <button className={'BtnItem'}
-                                        onClick={()=>{
-                                            axios
-                                                .get(URL_get_Item_Vendor(td.item.iid))
-                                                .then((res)=>setContent(res.data.userCv))
-                                                .then(()=>setModalIsOpen(true))
-                                        }}
+                                                onClick={()=>{
+                                                    axios
+                                                        .get(URL_get_Item_Vendor(td.item.iid))
+                                                        .then((res)=>setContent(res.data.userCv))
+                                                        .then(()=>setModalIsOpen(true))
+                                                }}
                                         >{td.item.name}</button>
                                         <button className={'ItemQty'}>{"x" + td.qty}</button>
                                     </>)
@@ -92,12 +87,16 @@ export default function AllOrders() {
                                 Address
                             </button>
                             <button className={'BtnPay'}
-                            onClick={()=>{
-                                axios
-                                    .get(URL_Delp_accept_order(loggedInUser.dpid,order.oid,1))
-                                    .then(()=>console.log("accept req sent"))
-                                    .then(()=>navigate('/allOrders'))
-                            }}
+                                    onClick={()=>{
+                                        axios
+                                            .post(URL_Delp_accept_order(loggedInUser.dpid,order.oid),1)
+                                            .then(
+                                                ()=>console.log("accept req sent")
+                                            )
+                                        axios.get(URL_all_orders)
+                                            .then((res) => dispatch({type: 'order/findAll', payload: res.data}))
+                                            .then(()=>console.log("refresh list"))
+                                    }}
                             >Accept</button>
                         </div>
                     ))}
