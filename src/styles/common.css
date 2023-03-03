@@ -177,6 +177,49 @@ input {
     border: chartreuse solid 2px;
     border-radius: 20px;
 }
+.BtnCancel {
+    width: 6em;
+    height: 3em;
+    background-color: inherit;
+    color: red;
+    border: red solid 2px;
+    border-radius: 20px;
+}
+.BtnPickUp {
+    width: 6em;
+    height: 3em;
+    background-color: inherit;
+    color: dodgerblue;
+    border: dodgerblue solid 2px;
+    border-radius: 20px;
+}
+
+.BtnPickUpAlt {
+    width: 6em;
+    height: 3em;
+    background-color: dodgerblue;
+    color: black;
+    border: dodgerblue solid 2px;
+    border-radius: 20px;
+}
+
+.BtnDeliver {
+    width: 6em;
+    height: 3em;
+    background-color: inherit;
+    color: orange;
+    border: orange solid 2px;
+    border-radius: 20px;
+}
+
+.BtnDeliverAlt {
+    width: 6em;
+    height: 3em;
+    background-color: orange;
+    color: black;
+    border: orange solid 2px;
+    border-radius: 20px;
+}
 
 .btnSmall {
     width: 50px;

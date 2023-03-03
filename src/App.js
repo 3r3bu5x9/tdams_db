@@ -9,29 +9,32 @@ import Login from "./user/Login";
 import {UserProvider} from "./contexts/UserContext";
 import MyOrders from "./uDeliveryP/MyOrders";
 import DelDasboard from "./uDeliveryP/DelDasboard";
+import {CounterProvider} from "./uDeliveryP/CounterContext";
 
 export default function App() {
 
     return (
-        <UserProvider>
-            <BrowserRouter>
-                <Provider store={store}>
-                    <div>
-                        <NavBar/>
-                        <div className={'content'}>
-                            <Routes>
-                                <Route path={'/'} element={<Home/>}></Route>
-                                <Route path={'/home'} element={<Home/>}></Route>
-                                <Route path={'/about'} element={<About/>}></Route>
-                                <Route path={'/login'} element={<Login/>}></Route>
-                                <Route path={'/allOrders'} element={<AllOrders/>}></Route>
-                                <Route path={'/myOrders'} element={<MyOrders/>}></Route>
-                                <Route path={'/delDashboard'} element={<DelDasboard/>}></Route>
-                            </Routes>
+        <CounterProvider>
+            <UserProvider>
+                <BrowserRouter>
+                    <Provider store={store}>
+                        <div>
+                            <NavBar/>
+                            <div className={'content'}>
+                                <Routes>
+                                    <Route path={'/'} element={<Home/>}></Route>
+                                    <Route path={'/home'} element={<Home/>}></Route>
+                                    <Route path={'/about'} element={<About/>}></Route>
+                                    <Route path={'/login'} element={<Login/>}></Route>
+                                    <Route path={'/allOrders'} element={<AllOrders/>}></Route>
+                                    <Route path={'/myOrders'} element={<MyOrders/>}></Route>
+                                    <Route path={'/delDashboard'} element={<DelDasboard/>}></Route>
+                                </Routes>
+                            </div>
                         </div>
-                    </div>
-                </Provider>
-            </BrowserRouter>
-        </UserProvider>
+                    </Provider>
+                </BrowserRouter>
+            </UserProvider>
+        </CounterProvider>
     );
 }

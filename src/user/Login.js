@@ -11,44 +11,20 @@ export default function Login() {
             <center>
                 <h2>Login</h2>
                 <br/>
-                <button className={'BtnPay'}
+                <button className={'BtnCheckout'}
                         onClick={() => {
                             setloggedInUser(() => delpList[0])
                             console.log(delpList[0])
                         }}
-                >Vendor 1
+                >Delivery Personnel 1
                 </button>
                 <br/>
-                <button className={'BtnPay'}
+                <button className={'BtnCheckout'}
                         onClick={() => {
                             setloggedInUser(() => delpList[1])
                             console.log(delpList[1])
                         }}
-                >Vendor 2
-                </button>
-                <br/>
-                <button className={'BtnPay'}
-                        onClick={() => {
-                            setloggedInUser(() => delpList[2])
-                            console.log(delpList[2])
-                        }}
-                >Vendor 3
-                </button>
-                <br/>
-                <button className={'BtnPay'}
-                        onClick={() => {
-                            setloggedInUser(() => delpList[3])
-                            console.log(delpList[3])
-                        }}
-                >Vendor 4
-                </button>
-                <br/>
-                <button className={'BtnPay'}
-                        onClick={() => {
-                            setloggedInUser(() => delpList[4])
-                            console.log(delpList[4])
-                        }}
-                >Vendor 5
+                >Delivery Personnel 2
                 </button>
 
             </center>
