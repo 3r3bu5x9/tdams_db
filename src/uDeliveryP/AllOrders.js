@@ -4,7 +4,6 @@ import {URL_all_orders, URL_Delp_accept_order, URL_get_Item_Vendor} from "../api
 import Modal from 'react-modal'
 import AddressInfo from "./AddressInfo";
 import UserContext from "../contexts/UserContext";
-import {useNavigate} from "react-router-dom";
 import CounterContext from "./CounterContext";
 
 Modal.setAppElement('#root')

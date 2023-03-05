@@ -6,3 +6,6 @@ export const URL_Delp_by_id = (dpid) => URL_base+"/deliveryp/"+dpid
 export const URL_Delp_deliver_order_post = (oid, status) => URL_base+"/order/set/del/"+oid+"/status/"+status
 export const URL_Delp_pickup_order_post = (oid, status) => URL_base+"/order/set/picked/"+oid+"/status/"+status
 export const URL_Delp_cancel_order = (oid)=>URL_base+"/order/cancel/"+oid
+
+export const URL_cust_add_tiffin_details_post = (cid)=>URL_base+"/tiffindetail/add/cust/"+cid
+export const URL_all_items = URL_base+"/item/all"

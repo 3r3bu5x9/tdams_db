@@ -10,6 +10,7 @@ import {UserProvider} from "./contexts/UserContext";
 import MyOrders from "./uDeliveryP/MyOrders";
 import DelDasboard from "./uDeliveryP/DelDasboard";
 import {CounterProvider} from "./uDeliveryP/CounterContext";
+import AddTiffinDetails from "./uCustomer/AddTiffinDetails";
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
                                     <Route path={'/allOrders'} element={<AllOrders/>}></Route>
                                     <Route path={'/myOrders'} element={<MyOrders/>}></Route>
                                     <Route path={'/delDashboard'} element={<DelDasboard/>}></Route>
+                                    <Route path={'/addTiffinDetails'} element={<AddTiffinDetails/>}></Route>
                                 </Routes>
                             </div>
                         </div>

@@ -26,6 +26,9 @@ export default function NavBar() {
                     <div className={'navLinkCnt'}>
                         <Link to={'/about'}>About</Link>
                     </div>
+                    <div className={'navLinkCnt'}>
+                        <Link to={'/addTiffinDetails'}>Tiffin details</Link>
+                    </div>
                 </div>
             </nav>
         </>

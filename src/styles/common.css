@@ -108,10 +108,14 @@ html, body {
 
 /*Button*/
 .ButtonContainer {
+    width: fit-content;
     display: flex;
-    justify-content: space-between;
-    margin-left: 2em;
-    margin-right: 2em;
+    justify-content: center;
+    flex-direction: row;
+}
+.Quantity{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 input {
@@ -286,4 +290,202 @@ input {
     height: fit-content;
     display: flex;
     flex-direction: row;
+}
+.HomeContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.HomeRow{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+}
+.ImageContainer{
+    width: inherit;
+    height: 200px;
+    padding: 20px;
+}
+.HomeImageContainer{
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.ImageNoodle{
+    width: inherit;
+    height: inherit;
+    fill: coral;
+    animation: flickerNoodle 4s linear infinite;
+}
+@keyframes flickerNoodle {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 coral, 1px -1px 0 coral, -1px 1px 0 coral, 1px 1px 0 coral, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImagePizza{
+    width: inherit;
+    height: inherit;
+    fill: orangered;
+    animation: flickerPizza 2s linear infinite;
+}
+@keyframes flickerPizza {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 orangered, 1px -1px 0 orangered, -1px 1px 0 orangered, 1px 1px 0 orangered, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImageIceCream{
+    width: inherit;
+    height: inherit;
+    fill: hotpink;
+    animation: flickerIceCream 4s linear infinite;
+}
+@keyframes flickerIceCream {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 hotpink, 1px -1px 0 hotpink, -1px 1px 0 hotpink, 1px 1px 0 hotpink, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImageOnigiri{
+    width: inherit;
+    height: inherit;
+    fill: greenyellow;
+    animation: flickerOnigiri 3s linear infinite;
+}
+@keyframes flickerOnigiri {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 greenyellow, 1px -1px 0 greenyellow, -1px 1px 0 greenyellow, 1px 1px 0 greenyellow, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImageKebab{
+    width: inherit;
+    height: inherit;
+    fill: dodgerblue;
+    animation: flickerOnigiri 2s linear infinite;
+}
+@keyframes flickerOnigiri {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 dodgerblue, 1px -1px 0 dodgerblue, -1px 1px 0 dodgerblue, 1px 1px 0 dodgerblue, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImageDonut{
+    width: inherit;
+    height: inherit;
+    fill: gold;
+    animation: flickerDonut 4s linear infinite;
+}
+@keyframes flickerDonut {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold, 1px 1px 0 gold, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImagePopsicle{
+    width: inherit;
+    height: inherit;
+    fill: cyan;
+    animation: flickerPopsicle 3s linear infinite;
+}
+@keyframes flickerPopsicle {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, -1px 1px 0 cyan, 1px 1px 0 cyan, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImagePancake{
+    width: inherit;
+    height: inherit;
+    fill: teal;
+    animation: flickerPancake 5s linear infinite;
+}
+@keyframes flickerPancake {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 teal, 1px -1px 0 teal, -1px 1px 0 teal, 1px 1px 0 teal, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImageSandwich{
+    width: inherit;
+    height: inherit;
+    fill: forestgreen;
+    animation: flickerSandwich 3s linear infinite;
+}
+@keyframes flickerSandwich {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 forestgreen, 1px -1px 0 forestgreen, -1px 1px 0 forestgreen, 1px 1px 0 forestgreen, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.ImageHotdog{
+    width: inherit;
+    height: inherit;
+    fill: darkorchid;
+    animation: flickerHotdog 4s linear infinite;
+}
+@keyframes flickerHotdog{
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: .99;
+        text-shadow: -1px -1px 0 darkorchid, 1px -1px 0 darkorchid, -1px 1px 0 darkorchid, 1px 1px 0 darkorchid, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+.HomeRow{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.HomePageTitleText{
+    text-align: center;
+    font-size: 80px;
+    color: orange;
 }

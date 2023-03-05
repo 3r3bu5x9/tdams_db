@@ -1,4 +1,3 @@
-import userContext from "../contexts/UserContext";
 import UserContext from "../contexts/UserContext";
 import delpList from "../mockData/dlepList";
 import {useContext} from "react";
@@ -24,7 +23,7 @@ export default function Login() {
                             setloggedInUser(() => delpList[1])
                             console.log(delpList[1])
                         }}
-                >Delivery Personnel 2
+                >Customer 1
                 </button>
 
             </center>
