@@ -11,13 +11,14 @@ html, body {
 }
 
 .content {
-    background-color: #0B0E12;
+    position: fixed;
+    background-color: inherit;
     border: yellow solid thin;
-    margin-left: 150px;
-}
-
-.content h2 {
-    padding-left: 20px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .Nav {
@@ -36,11 +37,13 @@ html, body {
     align-items: center;
     border: #919288 solid 1px;
 }
-.navLinkTitle{
+
+.navLinkTitle {
     margin-left: 5px;
     color: chartreuse;
     margin-bottom: 20px;
 }
+
 .Nav a {
     text-decoration: none;
     color: chartreuse;
@@ -101,6 +104,16 @@ html, body {
     height: fit-content;
 }
 
+.MyRowElementDesc {
+    padding: 12px;
+    border-radius: 20px;
+    color: chartreuse;
+    border: chartreuse solid 2px;
+    margin: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+
 .MyRowElementBtn {
     padding: 8px;
 }
@@ -113,7 +126,8 @@ html, body {
     justify-content: center;
     flex-direction: row;
 }
-.Quantity{
+
+.Quantity {
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -181,6 +195,7 @@ input {
     border: chartreuse solid 2px;
     border-radius: 20px;
 }
+
 .BtnCancel {
     width: 6em;
     height: 3em;
@@ -189,6 +204,7 @@ input {
     border: red solid 2px;
     border-radius: 20px;
 }
+
 .BtnPickUp {
     width: 6em;
     height: 3em;
@@ -255,7 +271,8 @@ input {
     bottom: 0;
     background-color: rgb(0, 0, 0, .25);
 }
-.InfoTitle{
+
+.InfoTitle {
     padding: 12px;
     border-radius: 20px;
     margin: 5px;
@@ -264,6 +281,7 @@ input {
     align-items: center;
     color: mediumorchid;
 }
+
 .ModalElementValAddress {
     padding: 12px;
     border-radius: 20px;
@@ -273,6 +291,7 @@ input {
     width: fit-content;
     height: fit-content;
 }
+
 .ModalElementValUser {
     padding: 12px;
     border-radius: 20px;
@@ -282,7 +301,8 @@ input {
     width: fit-content;
     height: fit-content;
 }
-.InfoContainer{
+
+.InfoContainer {
     padding: 12px;
     border-radius: 20px;
     margin: 5px;
@@ -291,7 +311,8 @@ input {
     display: flex;
     flex-direction: row;
 }
-.HomeContainer{
+
+.HomeContainer {
     width: 100%;
     height: 100%;
     display: flex;
@@ -299,30 +320,35 @@ input {
     flex-direction: column;
     align-items: center;
 }
-.HomeRow{
+
+.HomeRow {
     width: fit-content;
     height: fit-content;
     display: flex;
     justify-content: space-evenly;
 }
-.ImageContainer{
+
+.ImageContainer {
     width: inherit;
     height: 200px;
     padding: 20px;
 }
-.HomeImageContainer{
+
+.HomeImageContainer {
     width: 400px;
     height: 200px;
     padding: 20px;
     margin-left: 40px;
     margin-right: 40px;
 }
-.ImageNoodle{
+
+.ImageNoodle {
     width: inherit;
     height: inherit;
     fill: coral;
     animation: flickerNoodle 4s linear infinite;
 }
+
 @keyframes flickerNoodle {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -333,12 +359,14 @@ input {
         text-shadow: none;
     }
 }
-.ImagePizza{
+
+.ImagePizza {
     width: inherit;
     height: inherit;
     fill: orangered;
     animation: flickerPizza 2s linear infinite;
 }
+
 @keyframes flickerPizza {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -349,12 +377,14 @@ input {
         text-shadow: none;
     }
 }
-.ImageIceCream{
+
+.ImageIceCream {
     width: inherit;
     height: inherit;
     fill: hotpink;
     animation: flickerIceCream 4s linear infinite;
 }
+
 @keyframes flickerIceCream {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -365,12 +395,14 @@ input {
         text-shadow: none;
     }
 }
-.ImageOnigiri{
+
+.ImageOnigiri {
     width: inherit;
     height: inherit;
     fill: greenyellow;
     animation: flickerOnigiri 3s linear infinite;
 }
+
 @keyframes flickerOnigiri {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -381,12 +413,14 @@ input {
         text-shadow: none;
     }
 }
-.ImageKebab{
+
+.ImageKebab {
     width: inherit;
     height: inherit;
     fill: dodgerblue;
     animation: flickerOnigiri 2s linear infinite;
 }
+
 @keyframes flickerOnigiri {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -397,12 +431,14 @@ input {
         text-shadow: none;
     }
 }
-.ImageDonut{
+
+.ImageDonut {
     width: inherit;
     height: inherit;
     fill: gold;
     animation: flickerDonut 4s linear infinite;
 }
+
 @keyframes flickerDonut {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -413,12 +449,14 @@ input {
         text-shadow: none;
     }
 }
-.ImagePopsicle{
+
+.ImagePopsicle {
     width: inherit;
     height: inherit;
     fill: cyan;
     animation: flickerPopsicle 3s linear infinite;
 }
+
 @keyframes flickerPopsicle {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -429,12 +467,14 @@ input {
         text-shadow: none;
     }
 }
-.ImagePancake{
+
+.ImagePancake {
     width: inherit;
     height: inherit;
     fill: teal;
     animation: flickerPancake 5s linear infinite;
 }
+
 @keyframes flickerPancake {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -445,12 +485,14 @@ input {
         text-shadow: none;
     }
 }
-.ImageSandwich{
+
+.ImageSandwich {
     width: inherit;
     height: inherit;
     fill: forestgreen;
     animation: flickerSandwich 3s linear infinite;
 }
+
 @keyframes flickerSandwich {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -461,13 +503,15 @@ input {
         text-shadow: none;
     }
 }
-.ImageHotdog{
+
+.ImageHotdog {
     width: inherit;
     height: inherit;
     fill: darkorchid;
     animation: flickerHotdog 4s linear infinite;
 }
-@keyframes flickerHotdog{
+
+@keyframes flickerHotdog {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
         text-shadow: -1px -1px 0 darkorchid, 1px -1px 0 darkorchid, -1px 1px 0 darkorchid, 1px 1px 0 darkorchid, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
@@ -477,15 +521,66 @@ input {
         text-shadow: none;
     }
 }
-.HomeRow{
+
+.HomeRow {
     width: fit-content;
     height: fit-content;
     display: flex;
     flex-direction: row;
     padding: 20px;
 }
-.HomePageTitleText{
+
+.HomePageTitleText {
     text-align: center;
     font-size: 80px;
     color: orange;
+}
+
+.FormContainer {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.PageHeading {
+    text-align: center;
+}
+
+Form {
+    padding: 20px;
+    background-color: #0B0E12;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.LeftContainer {
+    width: 30%;
+    height: 100%;
+    border: #ff7e00 solid 2px;
+    margin-left: 20px;
+}
+
+.RightContainer {
+    width: 60%;
+    height: 100%;
+    border: darkorchid solid 2px;
+    background: rgb(197, 93, 249);
+    background: linear-gradient(0deg, rgba(197, 93, 249, 1) 0%, rgba(255, 81, 227, 1) 48%, rgba(255, 98, 98, 1) 100%);
+}
+
+.DashColumn {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.BalanceContainer {
+
 }

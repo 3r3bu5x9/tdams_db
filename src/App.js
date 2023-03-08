@@ -11,6 +11,10 @@ import MyOrders from "./uDeliveryP/MyOrders";
 import DelDasboard from "./uDeliveryP/DelDasboard";
 import {CounterProvider} from "./uDeliveryP/CounterContext";
 import AddTiffinDetails from "./uCustomer/AddTiffinDetails";
+import Register from "./user/Register";
+import VendorDashboard from "./uVendor/VendorDashboard";
+import AddItem from "./uVendor/AddItem";
+import ManageItems from "./uVendor/ManageItems";
 
 export default function App() {
 
@@ -27,10 +31,14 @@ export default function App() {
                                     <Route path={'/home'} element={<Home/>}></Route>
                                     <Route path={'/about'} element={<About/>}></Route>
                                     <Route path={'/login'} element={<Login/>}></Route>
+                                    <Route path={'/register'} element={<Register/>}></Route>
                                     <Route path={'/allOrders'} element={<AllOrders/>}></Route>
                                     <Route path={'/myOrders'} element={<MyOrders/>}></Route>
                                     <Route path={'/delDashboard'} element={<DelDasboard/>}></Route>
                                     <Route path={'/addTiffinDetails'} element={<AddTiffinDetails/>}></Route>
+                                    <Route path={'/vendorDashboard'} element={<VendorDashboard/>}></Route>
+                                    <Route path={'/vendorAddItem'} element={<AddItem/>}></Route>
+                                    <Route path={'/vendorManageItem'} element={<ManageItems/>}></Route>
                                 </Routes>
                             </div>
                         </div>

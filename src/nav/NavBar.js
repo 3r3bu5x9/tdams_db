@@ -24,6 +24,12 @@ export default function NavBar() {
                         <Link to={'/delDashboard'}>Dashboard</Link>
                     </div>
                     <div className={'navLinkCnt'}>
+                        <Link to={'/vendorDashboard'}>VendorDashboard</Link>
+                    </div>
+                    <div className={'navLinkCnt'}>
+                        <Link to={'/vendorAddItem'}>Add item</Link>
+                    </div>
+                    <div className={'navLinkCnt'}>
                         <Link to={'/about'}>About</Link>
                     </div>
                     <div className={'navLinkCnt'}>
