@@ -7,9 +7,10 @@ html, body {
     height: 100%;
     font-family: "JetBrains Mono", monospace;
     color: #ccc;
-    background: rgb(197, 93, 249);
-    background: linear-gradient(0deg, rgba(197, 93, 249, 1) 0%, rgba(255, 81, 227, 1) 48%, rgba(255, 98, 98, 1) 100%);
-
+    /*background: rgb(197, 93, 249);*/
+    /*background: linear-gradient(0deg, rgba(197, 93, 249, 1) 0%, rgba(255, 81, 227, 1) 48%, rgba(255, 98, 98, 1) 100%);*/
+    background: url("../img/jingxi-lau-Hk5IMa22lys-unsplash.jpg");
+    background-size: cover;
 }
 Form{
     border-radius: 16px;
@@ -18,7 +19,7 @@ Form{
 .content {
     position: fixed;
     flex-direction: column;
-    background-color: inherit;
+    background-color: rgba(12,12,12,0.75);
     margin-left: 75px;
     display: flex;
     justify-content: center;
@@ -39,7 +40,6 @@ Form{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #040404;
     transition: .5s ease;
     overflow-x: hidden;
     padding-top: 20px;
@@ -47,6 +47,8 @@ Form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("../img/navbar.jpg");
+    background-size: cover;
 }
 
 .navLinkTitle {
@@ -321,7 +323,7 @@ input {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #222222;
+    background-color: rgba(12,12,12,0.60);
 }
 
 .HomeRow {
