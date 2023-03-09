@@ -1,26 +1,29 @@
-import {Button, Table} from "reactstrap";
-import {useContext, useEffect, useState} from "react";
+import {Button} from "reactstrap";
+import {useEffect, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import {URL_all_items, URL_cust_add_tiffin_details_post} from "../apis/apis";
-import UserContext from "../contexts/UserContext";
+import getAccessToken from "../util/getAccessToken";
 
 export default function AddTiffinDetails() {
-    const {loggedInUser} = useContext(UserContext)
+    const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"))
     const [items, setItems] = useState([])
     const [itemDetails, setItemDetails] = useState([])
     const [itemDetailsQty, setItemDetailsQty] = useState([])
     const [isButtonDisabled, setIsButtonDisabled] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios
-            .get(URL_all_items)
+            .get(URL_all_items,
+                {headers: {Authorization: getAccessToken()}})
             .then((res) => setItems(() => res.data))
     }, [])
 
     useEffect(() => {
-        setItemDetails(()=>items.map((item) => ({item: item, qty: 0})))
-        setItemDetailsQty(()=>items.map(() => 0))
-        setIsButtonDisabled(()=>items.map(() => false))
+        setItemDetails(() => items.map((item) => ({item: item, qty: 0})))
+        setItemDetailsQty(() => items.map(() => 0))
+        setIsButtonDisabled(() => items.map(() => false))
     }, [items])
 
     const addToTiffin = (itemDetail, index) => {
@@ -32,7 +35,8 @@ export default function AddTiffinDetails() {
             })
             itemDetail.qty = itemDetailsQty[index]
             axios
-                .post(URL_cust_add_tiffin_details_post(loggedInUser.cid), itemDetail)
+                .post(URL_cust_add_tiffin_details_post(loggedUser.id), itemDetail,
+                    {headers: {Authorization: getAccessToken()}})
                 .then(() => console.log(itemDetail + " sent"))
         }
     }
@@ -59,72 +63,60 @@ export default function AddTiffinDetails() {
 
     return (
         <>
-            <center>
-                <h2>Tiffin Details</h2>
-                <Table
-                    borderless
-                    dark
-                    hover
-                    size="sm"
-                >
-                    <thead>
-                    <tr>
-                        <th>
-                            #
-                        </th>
-                        <th>
-                            name
-                        </th>
-                        <th>
-                            stock
-                        </th>
-                        <th>
-                            price
-                        </th>
-                        <th>
-                            qty
-                        </th>
-                        <th>
-                            action
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
+            <div className={'RightContainer2'}>
+                <center>
+                    <h2>Tiffin Details</h2>
                     {
                         itemDetails.map((itemDetail, index) =>
-                            <tr key={index}>
-                                <th scope="row">
-                                    {itemDetail.item.iid}
-                                </th>
-                                <td>
-                                    {itemDetail.item.name}
-                                </td>
-                                <td>
-                                    {itemDetail.item.qty}
-                                </td>
-                                <td>
-                                    {itemDetail.item.price}
-                                </td>
-                                <td>
+                            <div key={index} className={'MyRow'}>
+                                <div className={'InfoContainer'}>
+                                    <div className={'ModalElementValUser'}>
+                                        {"#:"}
+                                    </div>
+                                    <div className={'MyRowElementDesc'}>{itemDetail.item.iid}</div>
+                                </div>
+                                <div className={'InfoContainer'}>
+                                    <div className={'ModalElementValUser'}>
+                                        {"Name:"}
+                                    </div>
+                                    <div className={'MyRowElementDesc'}> {itemDetail.item.name}</div>
+                                </div>
+                                <div className={'InfoContainer'}>
+                                    <div className={'ModalElementValUser'}>
+                                        {"Qty:"}
+                                    </div>
+                                    <div className={'MyRowElementDesc'}>{itemDetail.item.qty}</div>
+                                </div>
+                                <div className={'InfoContainer'}>
+                                    <div className={'ModalElementValUser'}>
+                                        {"Price:"}
+                                    </div>
+                                    <div className={'MyRowElementDesc'}> {itemDetail.item.price}</div>
+                                </div>
+                                <div className={'InfoContainer'}>
                                     <div className={'ButtonContainer'}>
-                                        <Button onClick={() => Increment(itemDetail.item.qty, index)}>+</Button>
+                                        <Button className={'btn-danger'} onClick={() => Decrement(index)}>-</Button>
                                         <div className={'Quantity'}>
                                             {itemDetailsQty[index]}
                                         </div>
-                                        <Button onClick={() => Decrement(index)}>-</Button>
+                                        <Button className={'btn-danger'} onClick={() => Increment(itemDetail.item.qty, index)}>+</Button>
                                     </div>
-                                </td>
-                                <td>
-                                    <Button onClick={() => addToTiffin(itemDetail, index)}
-                                            disabled={isButtonDisabled[index]}
-                                    >Add Item</Button>
-                                </td>
-                            </tr>
+                                </div>
+                                <div className={'InfoContainer'}>
+                                    <div className={'ButtonContainer'}>
+                                        <Button className={'btn-success'} onClick={() => addToTiffin(itemDetail, index)}
+                                                disabled={isButtonDisabled[index]}
+                                        >Add Item</Button>
+                                    </div>
+                                </div>
+                            </div>
                         )
                     }
-                    </tbody>
-                </Table>
-            </center>
+                    <Button className={'btn-info'} onClick={()=>navigate("/customerShowTiffin")}>
+                        View my Tiffin
+                    </Button>
+                </center>
+            </div>
         </>
     )
 }

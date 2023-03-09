@@ -8,6 +8,7 @@ import {ReactComponent as PancakeLogo} from '../icons/fast-food-pancake-svgrepo-
 import {ReactComponent as SandwichLogo} from '../icons/fast-food-sandwich-svgrepo-com.svg'
 import {ReactComponent as HotDogLogo} from '../icons/fast-food-hotdog-svgrepo-com.svg'
 import {ReactComponent as PopsicleLogo} from '../icons/fast-food-popsicle-svgrepo-com.svg'
+
 export default function Home() {
     return (
         <>

@@ -1,43 +1,46 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import {URL_add_user} from "../apis/apis";
+import {URL_add_user, URL_find_user_with_id, URL_update_user} from "../apis/apis";
 import getAccessToken from "../util/getAccessToken";
 import {toast, ToastContainer} from "react-toastify";
 import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 import {useNavigate} from "react-router-dom";
 
-export default function Register() {
+export default function EditUser() {
+    const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"))
     const navigate = useNavigate()
-    const [user, setUser] = useState({
-        firstName: "", lastName: "", mob: "", dob: "", username: "", password: ""
-    })
-    const [role, setRole] = useState(0);
+    const [user, setuser] = useState({})
+
+    useEffect(() => {
+        axios.get(URL_find_user_with_id(loggedUser.uid),
+            {headers: {Authorization: getAccessToken()}})
+            .then((res) => {
+                setuser(() => res.data)
+                console.log(res.data.user)
+            })
+    }, [])
     const HandleChange = (args) => {
-        const copyUser = {...user};
-        copyUser[args.target.name] = args.target.value;
-        setUser(copyUser);
+        const copyuser = {...user};
+        copyuser[args.target.name] = args.target.value;
+        setuser(copyuser);
         console.log(user);
     };
 
-    function handleRegister() {
-        axios.post(URL_add_user(role),user)
-            .then((res) => console.log(res.data))
-            .then(() => toast.success("User registered!", {
+    function handleUpdate() {
+        axios.post(URL_update_user(user.uid), user,
+            {headers: {Authorization: getAccessToken()}})
+            .then(() => toast.success("User updated!", {
                 position: toast.POSITION.TOP_RIGHT,
                 theme: "dark"
             }))
             .then(() => setTimeout(() =>
-                    toast.dark("Redirecting to login...", {
+                    toast.dark("Redirecting to home...", {
                         position: toast.POSITION.TOP_RIGHT
                     })
                 , 1000))
-            .then(() => setTimeout(() => navigate("/login"), 4000))
+            .then(() => setTimeout(() => navigate("/"), 4000))
     }
 
-    const HandleRoleChange = (e) => {
-        setRole(() => e.target.value)
-        console.log(role);
-    }
 
     return (
         <>
@@ -84,44 +87,12 @@ export default function Register() {
                             value={user.dob} onChange={HandleChange}
                         />
                     </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleEmail">
-                            Username
-                        </Label>
-                        <Input
-                            name={'username'} type={'text'} placeholder={"Enter your username"}
-                            value={user.username} onChange={HandleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="examplePassword">
-                            Password
-                        </Label>
-                        <Input
-                            name={'password'} type={'text'} placeholder={"Enter your password"}
-                            value={user.password} onChange={HandleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleEmail">
-                            Role
-                        </Label>
-                        <Input
-                            name={'role'} type={'select'}
-                            onChange={HandleRoleChange}
-                        >
-                            <option value={1}>Admin</option>
-                            <option value={2}>Customer</option>
-                            <option value={3}>Vendor</option>
-                            <option value={4}>Delivery Personnel</option>
-                        </Input>
-                    </FormGroup>
                     <center>
                         <Button
                             className={'btn-warning'}
-                            onClick={handleRegister}
+                            onClick={handleUpdate}
                         >
-                            Register
+                            Update
                         </Button>
                     </center>
                 </Form>

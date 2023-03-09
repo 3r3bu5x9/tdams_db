@@ -1,17 +1,15 @@
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
-import {URL_add_item} from "../apis/apis";
+import {URL_vendor_edit_item} from "../apis/apis";
 import getAccessToken from "../util/getAccessToken";
 import {toast, ToastContainer} from "react-toastify";
 import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 
-export default function AddItem() {
-    const navigate = useNavigate()
-    const vendor = JSON.parse(sessionStorage.getItem("loggedUser"))
-    const [item, setItem] = useState({
-        name: "", qty: "", price: ""
-    })
+export default function EditItem() {
+    const navigate = useNavigate();
+    const location = useLocation()
+    const [item, setItem] = useState(JSON.parse(location.state));
     const HandleChange = (args) => {
         const copyitem = {...item};
         copyitem[args.target.name] = args.target.value;
@@ -19,20 +17,20 @@ export default function AddItem() {
         console.log(item);
     };
 
-    function handleRegister() {
-        axios.post(URL_add_item(vendor.id),item,
+    function handleUpdate() {
+        axios.post(URL_vendor_edit_item(item.iid), item,
             {headers: {Authorization: getAccessToken()}})
             .then((res) => console.log(res.data))
-            .then(() => toast.success("item registered!", {
+            .then(() => toast.success("item updated!", {
                 position: toast.POSITION.TOP_RIGHT,
                 theme: "dark"
             }))
             .then(() => setTimeout(() =>
-                    toast.dark("Redirecting to Dashboard...", {
+                    toast.dark("Redirecting to Items...", {
                         position: toast.POSITION.TOP_RIGHT
                     })
                 , 1000))
-            .then(() => setTimeout(() => navigate("/vendorDashboard"), 4000))
+            .then(() => setTimeout(() => navigate("/vendorManageItem"), 4000))
     }
 
 
@@ -42,7 +40,7 @@ export default function AddItem() {
             <div className={'FormContainer'}>
                 <Form>
                     <div className={'PageHeading'}>
-                        <h1>🍔🍗🍝🍰🍸</h1>
+                        <h1>✏️🍗</h1>
                     </div>
                     <FormGroup>
                         <Label for="exampleEmail">
@@ -55,7 +53,7 @@ export default function AddItem() {
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleEmail">
-                            Price
+                            Stock
                         </Label>
                         <Input
                             name={'price'} type={'text'} placeholder={"Enter item price"}
@@ -64,7 +62,7 @@ export default function AddItem() {
                     </FormGroup>
                     <FormGroup>
                         <Label for="examplePassword">
-                            Stock
+                            Price
                         </Label>
                         <Input
                             name={'qty'} type={'text'} placeholder={"Enter item quantity"}
@@ -73,10 +71,10 @@ export default function AddItem() {
                     </FormGroup>
                     <center>
                         <Button
-                            className={'btn-warning'}
-                            onClick={handleRegister}
+                            className={'btn-success'}
+                            onClick={handleUpdate}
                         >
-                            Add
+                            Update
                         </Button>
                     </center>
                 </Form>

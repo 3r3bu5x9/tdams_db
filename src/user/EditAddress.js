@@ -1,12 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import {URL_add_address} from "../apis/apis";
+import {URL_add_address, URL_find_user_with_id, URL_update_address} from "../apis/apis";
 import getAccessToken from "../util/getAccessToken";
 import {toast, ToastContainer} from "react-toastify";
 import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 import {useNavigate} from "react-router-dom";
 
-export default function AddAddress() {
+export default function EditAddress() {
     const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"))
     const navigate = useNavigate()
     const [address, setaddress] = useState({
@@ -17,6 +17,15 @@ export default function AddAddress() {
             pincode: ""
         }
     )
+
+    useEffect(() => {
+        axios.get(URL_find_user_with_id(loggedUser.uid),
+            {headers: {Authorization: getAccessToken()}})
+            .then((res) => {
+                setaddress(() => res.data.address)
+                console.log(res.data.address)
+            })
+    }, [])
     const HandleChange = (args) => {
         const copyaddress = {...address};
         copyaddress[args.target.name] = args.target.value;
@@ -24,11 +33,10 @@ export default function AddAddress() {
         console.log(address);
     };
 
-    function handleRegister() {
-        axios.post(URL_add_address(loggedUser.uid), address,
+    function handleEdit() {
+        axios.post(URL_update_address(address.aid), address,
             {headers: {Authorization: getAccessToken()}})
-            .then((res) => console.log(res.data))
-            .then(() => toast.success("Address added!", {
+            .then(() => toast.success("Address updated!", {
                 position: toast.POSITION.TOP_RIGHT,
                 theme: "dark"
             }))
@@ -97,9 +105,9 @@ export default function AddAddress() {
                     <center>
                         <Button
                             className={'btn-warning'}
-                            onClick={handleRegister}
+                            onClick={handleEdit}
                         >
-                            Register
+                            Update
                         </Button>
                     </center>
                 </Form>
