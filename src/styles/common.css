@@ -11,6 +11,7 @@ html, body {
     /*background: linear-gradient(0deg, rgba(197, 93, 249, 1) 0%, rgba(255, 81, 227, 1) 48%, rgba(255, 98, 98, 1) 100%);*/
     background: url("../img/jingxi-lau-Hk5IMa22lys-unsplash.jpg");
     background-size: cover;
+    font-size: 18px;
 }
 Form{
     border-radius: 16px;
@@ -49,6 +50,7 @@ Form{
     align-items: center;
     background-image: url("../img/navbar.jpg");
     background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 
 .navLinkTitle {
@@ -89,7 +91,7 @@ Form{
 .MyRow {
     display: flex;
     background-color: #040404;
-    border: #222222 solid 2px;
+    border: #131313 solid 2px;
     border-radius: 20px;
     margin: 5px;
     width: fit-content;
@@ -179,7 +181,7 @@ input {
 
 .BtnRed {
     background: red;
-    color: #0B0E12;
+    color: #131313;
     width: 5em;
     height: 3em;
 }
@@ -188,7 +190,7 @@ input {
     width: 12em;
     height: 3em;
     background: gold;
-    color: #0B0E12;
+    color: #131313;
 }
 
 .BtnPay {
@@ -261,7 +263,7 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #222222;
+    background-color: #131313;
     padding: 50px;
     z-index: 1000;
     border-radius: 20px;
@@ -555,8 +557,9 @@ input {
 }
 
 Form {
-    padding: 20px;
-    background-color: #0B0E12;
+    padding: 40px;
+    background-color: #131313;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 
 .btnContainer {
@@ -570,25 +573,27 @@ Form {
     width: 40%;
     display: flex;
     flex-direction: column;
-    background-color: #0B0E12;
+    background-color: #131313;
     padding: 30px;
     border-radius: 16px;
     margin-right: 20px;
     height: fit-content;
     align-self: center;
     justify-content: space-evenly;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 .TableContainer {
     width: 80%;
     display: flex;
     flex-direction: column;
-    background-color: #0B0E12;
+    background-color: #131313;
     padding: 30px;
     border-radius: 16px;
     margin-right: 20px;
     height: fit-content;
     align-self: center;
     justify-content: space-evenly;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 .LeftContainer  button{
     margin: 10px;
@@ -611,33 +616,36 @@ Form {
     height: fit-content;
     display: flex;
     flex-direction: column;
-    background-color: #222222;
+    background-color: #131313;
     border-radius: 16px;
     padding: 30px;
     align-self: center;
     color: cyan;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 .RightContainer1 {
     width: 60%;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    background-color: #222222;
+    background-color: #131313;
     border-radius: 16px;
     padding: 30px;
     align-self: center;
     color: #ff4444;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 .RightContainer2 {
-    width: 70%;
+    width: fit-content;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    background-color: #222222;
+    background-color: #131313;
     border-radius: 16px;
     padding: 30px;
     align-self: center;
     color: #ff4444;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 .RightUpper {
     width: 100%;
@@ -659,10 +667,10 @@ Form {
     color: darkorchid;
     display: flex;
     flex-direction: column;
-    background-color: #0B0E12;
+    background-color: #131313;
     width: 100%;
-    height: 100%;
-    padding: 10px;
+    height: fit-content;
+    padding: 20px;
     border-radius: 16px;
 }
 
@@ -674,7 +682,7 @@ Form {
     height: 30px;
     margin: 15px;
     background-color: orange;
-    color: #0B0E12;
+    color: #131313;
 }
 .Balance{
     height: 30px;
@@ -685,7 +693,7 @@ Form {
     position: relative;
     align-self: center;
     padding: 20px;
-    background-color: #222222;
+    background-color: #131313;
     border-radius: 16px;
     margin-top: 30px;
 }
@@ -700,12 +708,48 @@ Form {
 .AboutContainer {
     text-align: center;
     width: 80%;
-    background-color: #222222;
+    background-color: #131313;
     height: fit-content;
     margin-top: 100px;
     padding: 30px;
     border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 .AboutContainer > h1{
     color: rebeccapurple;
+}
+.OrderStatus{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.OrderStatus button{
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.BtnCntr
+{
+    width: 100%;
+}
+.BtnCntr button{
+    width: 100%;
+}
+Table{
+    text-align: center;
+}
+Table th {
+    color: gold;
+}
+Table td {
+    color: orangered;
+}
+Table td{
+    border: #131313;
+}
+Table th{
+    border: #131313;
+}
+.RoleBadge button{
+    border-radius: 20px;
 }

@@ -50,8 +50,6 @@ export default function CustomerShowTiffin() {
                 <center>
                     <h2>Bill</h2>
                     <Table
-                        borderless
-                        dark
                         hover
                         size="sm"
                     >

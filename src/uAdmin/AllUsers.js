@@ -28,9 +28,7 @@ export default function AllUsers() {
             <div className={'TableContainer'}>
                 <center><h2>All users</h2></center>
                 <Table
-                    dark
                     responsive
-                    striped
                     hover
                 >
                     <thead>
@@ -48,22 +46,22 @@ export default function AllUsers() {
                             Username
                         </th>
                         <th>
-                            mob
+                            Mobile no.
                         </th>
                         <th>
-                            dob
+                            DOB
                         </th>
                         <th>
-                            role
+                            Role
                         </th>
                         <th>
-                            action
+                            Action
                         </th>
                     </tr>
                     </thead>
                     <tbody>
                     {
-                        userList.map((user, index)=>
+                        userList.map((user, index) =>
                             <tr key={index}>
                                 <th scope="row">
                                     {user.uid}
@@ -84,11 +82,36 @@ export default function AllUsers() {
                                     {user.dob}
                                 </td>
                                 <td>
-                                    {user.role.name}
+                                    <div className={'RoleBadge'}>
+                                        {
+                                            (user.role.name === "ROLE_ADMIN") ?
+                                                <Button color={'danger'}>Admin</Button>
+                                                :
+                                                null
+                                        }
+                                        {
+                                            (user.role.name === "ROLE_VENDOR") ?
+                                                <Button color={'warning'}>Vendor</Button>
+                                                :
+                                                null
+                                        }
+                                        {
+                                            (user.role.name === "ROLE_CUSTOMER") ?
+                                                <Button color={'primary'}>Customer</Button>
+                                                :
+                                                null
+                                        }
+                                        {
+                                            (user.role.name === "ROLE_DELIVERY_PERSONNEL") ?
+                                                <Button color={'success'}>Delivery</Button>
+                                                :
+                                                null
+                                        }
+                                    </div>
                                 </td>
                                 <td>
                                     <Button className={'btn-danger'}
-                                            onClick={()=>{
+                                            onClick={() => {
                                                 axios.get(URL_delete_user(user.uid),
                                                     {headers: {Authorization: getAccessToken()}})
                                                     .then(() => setCounter(p => p + 1))

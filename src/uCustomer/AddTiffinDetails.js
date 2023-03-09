@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import {URL_all_items, URL_cust_add_tiffin_details_post} from "../apis/apis";
 import getAccessToken from "../util/getAccessToken";
+import {toast, ToastContainer} from "react-toastify";
 
 export default function AddTiffinDetails() {
     const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"))
@@ -37,7 +38,10 @@ export default function AddTiffinDetails() {
             axios
                 .post(URL_cust_add_tiffin_details_post(loggedUser.id), itemDetail,
                     {headers: {Authorization: getAccessToken()}})
-                .then(() => console.log(itemDetail + " sent"))
+                .then(() => toast.success("Item added!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    theme: "dark"
+                }))
         }
     }
 
@@ -63,6 +67,7 @@ export default function AddTiffinDetails() {
 
     return (
         <>
+            <ToastContainer autoClose={2000}/>
             <div className={'RightContainer2'}>
                 <center>
                     <h2>Tiffin Details</h2>

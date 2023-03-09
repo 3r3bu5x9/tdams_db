@@ -1,9 +1,9 @@
-import {Button} from "reactstrap";
+import {Badge, Button} from "reactstrap";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import getAccessToken from "../util/getAccessToken";
 import {useNavigate} from "react-router-dom";
-import {ToastContainer} from "react-toastify";
+import {toast, ToastContainer} from "react-toastify";
 import {URL_cust_create_tiffin, URL_cust_get_order, URL_get_Customer} from "../apis/apis";
 import TiffinInfo from "../uVendor/TiffinInfo";
 
@@ -27,7 +27,7 @@ export default function CustomerDashboard() {
         axios.get(URL_cust_get_order(loggedUser.id),
             {headers: {Authorization: getAccessToken()}})
             .then((res) => setOrder(() => res.data))
-            .then(() => console.log("Fetching order"))
+            .then(() => toast.dark("Order status synced!"))
     }
 
     function handleCreateTiffin() {
@@ -72,13 +72,34 @@ export default function CustomerDashboard() {
                                         <div>
                                             <TiffinInfo tiffin={customer.tiffin}/>
                                             <div className={'RightLower'}>
-                                                <div className={'DashBlock'}>
+                                                <div>
                                                     <h2>My Order</h2>
-                                                    <h3>{(order.isAccepted) ? "accepted" : "not accepted"}</h3>
-                                                    <h3>{(order.isPickedUp) ? "picked up" : "not picked up"}</h3>
-                                                    <h3>{order.isDelivered ? "delivered" : "not delivered"}</h3>
-                                                    <Button className={'btn-info'} onClick={syncOrderStatus}>Sync Order</Button>
+                                                    <center>
+                                                        <div className={'OrderStatus'}>
+                                                            {
+                                                                (!order.isAccepted)?
+                                                                    <Button outline color={'danger'}>Not accepted</Button>
+                                                                    :
+                                                                    <Button color={'danger'}>Accepted</Button>
+                                                            }
+                                                            {
+                                                                (!order.isPickedUp)?
+                                                                    <Button outline color={'warning'}>Not picked up</Button>
+                                                                    :
+                                                                    <Button color={'warning'}>Picked up</Button>
+                                                            }
+                                                            {
+                                                                (!order.isDelivered)?
+                                                                    <Button outline color={'success'}>Not delivered</Button>
+                                                                    :
+                                                                    <Button color={'success'}>Delivered</Button>
+                                                            }
+                                                        </div>
+                                                    </center>
                                                 </div>
+                                               <div className={'BtnCntr'}>
+                                                   <Button className={'btn-info'} onClick={syncOrderStatus}>Sync Order</Button>
+                                               </div>
                                             </div>
                                         </div>
                                 }
