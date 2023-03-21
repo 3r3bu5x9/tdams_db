@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tdams_db/static/css/main.30a878aa.css",
-    "main.js": "/tdams_db/static/js/main.a736dde8.js",
+    "main.js": "/tdams_db/static/js/main.1b75a3a1.js",
     "static/media/jingxi-lau-Hk5IMa22lys-unsplash.jpg": "/tdams_db/static/media/jingxi-lau-Hk5IMa22lys-unsplash.f0bbbf1cfc7dbb350c01.jpg",
     "static/media/navbar.jpg": "/tdams_db/static/media/navbar.c73c45292a1e7b8e71f9.jpg",
     "static/media/fast-food-pancake-svgrepo-com.svg": "/tdams_db/static/media/fast-food-pancake-svgrepo-com.d337be0bd8454add907e7620421ddc06.svg",
@@ -16,10 +16,10 @@
     "static/media/fast-food-popsicle-svgrepo-com.svg": "/tdams_db/static/media/fast-food-popsicle-svgrepo-com.18327f76e5fda778e3aab026aa778ead.svg",
     "index.html": "/tdams_db/index.html",
     "main.30a878aa.css.map": "/tdams_db/static/css/main.30a878aa.css.map",
-    "main.a736dde8.js.map": "/tdams_db/static/js/main.a736dde8.js.map"
+    "main.1b75a3a1.js.map": "/tdams_db/static/js/main.1b75a3a1.js.map"
   },
   "entrypoints": [
     "static/css/main.30a878aa.css",
-    "static/js/main.a736dde8.js"
+    "static/js/main.1b75a3a1.js"
   ]
 }
