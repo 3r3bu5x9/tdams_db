@@ -3,6 +3,7 @@
   "name": "tdams_db",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://3.110.208.219:8080",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
