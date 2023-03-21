@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/tdams_db/static/css/main.30a878aa.css",
+    "main.js": "/tdams_db/static/js/main.a736dde8.js",
+    "static/media/jingxi-lau-Hk5IMa22lys-unsplash.jpg": "/tdams_db/static/media/jingxi-lau-Hk5IMa22lys-unsplash.f0bbbf1cfc7dbb350c01.jpg",
+    "static/media/navbar.jpg": "/tdams_db/static/media/navbar.c73c45292a1e7b8e71f9.jpg",
+    "static/media/fast-food-pancake-svgrepo-com.svg": "/tdams_db/static/media/fast-food-pancake-svgrepo-com.d337be0bd8454add907e7620421ddc06.svg",
+    "static/media/fast-food-kebab-svgrepo-com.svg": "/tdams_db/static/media/fast-food-kebab-svgrepo-com.7725b41dffaf01956e5793efe774a520.svg",
+    "static/media/fast-food-sandwich-svgrepo-com.svg": "/tdams_db/static/media/fast-food-sandwich-svgrepo-com.338fc1f9f876fa8ee6a4a4bb86804e7a.svg",
+    "static/media/fast-food-hotdog-svgrepo-com.svg": "/tdams_db/static/media/fast-food-hotdog-svgrepo-com.b8fb99f58c90717173aa7d4b5ee94144.svg",
+    "static/media/fast-food-ice-svgrepo-com.svg": "/tdams_db/static/media/fast-food-ice-svgrepo-com.67bc88436116e4eea110f4522a3620be.svg",
+    "static/media/fast-food-noodle-svgrepo-com.svg": "/tdams_db/static/media/fast-food-noodle-svgrepo-com.8b3f0b1b7962c69b20cfdf96d85d1ce4.svg",
+    "static/media/fast-food-donut-svgrepo-com.svg": "/tdams_db/static/media/fast-food-donut-svgrepo-com.dd7c97b854242c2b8d88504e60f99c07.svg",
+    "static/media/fast-food-pizza-svgrepo-com.svg": "/tdams_db/static/media/fast-food-pizza-svgrepo-com.c721a04917d814ec233ef5a2dbd30b27.svg",
+    "static/media/fast-food-onigiri-svgrepo-com.svg": "/tdams_db/static/media/fast-food-onigiri-svgrepo-com.f27c5bb9d8c5a140e465e5315ab4e092.svg",
+    "static/media/fast-food-popsicle-svgrepo-com.svg": "/tdams_db/static/media/fast-food-popsicle-svgrepo-com.18327f76e5fda778e3aab026aa778ead.svg",
+    "index.html": "/tdams_db/index.html",
+    "main.30a878aa.css.map": "/tdams_db/static/css/main.30a878aa.css.map",
+    "main.a736dde8.js.map": "/tdams_db/static/js/main.a736dde8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30a878aa.css",
+    "static/js/main.a736dde8.js"
+  ]
+}
