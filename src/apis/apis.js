@@ -1,4 +1,4 @@
-export const URL_base = "http://localhost:8080/api"
+export const URL_base = "http://tdams.online/api"
 export const URL_login = URL_base + "/login"
 export const URL_find_user_with_id = (uid) => URL_base + "/user/find/" + uid
 export const URL_add_user = (rid) => URL_base + "/register/" + rid
